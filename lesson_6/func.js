@@ -57,17 +57,50 @@
 const stagiaires = [
     {nom : "Loukhmi",prenom: "Lokmane",age: 19},
     {nom : "Maih",prenom: "Akram",age: 19},
-    {nom : "Blakoul",prenom: "Mohamed",age: 20},
-    {nom : "Najmi",prenom: "Othmane",age: 22}
+    {nom : "Blakoul",prenom: "Mohamed",age: 10},
+    {nom : "Najmi",prenom: "Othmane",age: 20}
 ];
 
-let nomStagiares;
+// let nomStagiares;
 
 
-nomStagiares = stagiaires.map((stagiaire_Full_Name) => {
-    Full_Name = stagiaire_Full_Name["nom"]+" "+stagiaire_Full_Name["prenom"]
-    return Full_Name })
+// nomStagiares = stagiaires.map((stagiaire_Full_Name) => {
+//     Full_Name = stagiaire_Full_Name["nom"]+" "+stagiaire_Full_Name["prenom"]
+//     return Full_Name })
 
-console.log(stagiaires)
-console.log(nomStagiares)
+// console.log(stagiaires)
+// console.log(nomStagiares)
+
+// let stagiaire;
+
+// stagiaire = stagiaires.map((Name_and_age) => {
+//     Name_age = Name_and_age["nom"]+" is " + Name_and_age["age"] + " years_old"
+//     return Name_age }
+//     );
+
+// console.log(stagiaire)
+
+// let a = {nom : "loukhmi"}
+// a["prenom"] = "lokmane";
+// a.age = 24
+// let b;
+// b = {...a,id : 1};
+// console.log("test",b);
+
+let nomAge;
+nomAge = stagiaires.map((item,index,arrstagiaire) => {
+    //{nom : "Loukhmi",prenom: "Lokmane",age: 19 ,branche : "DD"}
+    let st;
+    st = {...item, branche: "DD" , id: index + 1};
+    if (item["age"] >= 20){
+        st.remaque =  "plus 20";
+    }
+    else if (item["age"] <= 20){
+        st.remaque =  "nepas plus 20";
+    }
+    return st;
+});
+console.log(nomAge);
+
+
 
